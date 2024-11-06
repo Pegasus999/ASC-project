@@ -4,5 +4,57 @@
         <title>My Page</title>
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body></body>
+    <body>
+        <form>
+            <input type="text" id="name" placeholder="Name" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="password" id="password" placeholder="Password" />
+            <button type="button" id="registerButton">Submit</button>
+            <!-- Use type="button" -->
+        </form>
+
+        <script type="module">
+            // Import necessary functions from Firebase SDK
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+            import {
+                getAuth,
+                createUserWithEmailAndPassword,
+            } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyBtsY6PJ1gNelW2WGGMeCDacUjpLF3pDzw",
+                authDomain: "asc-project-58b62.firebaseapp.com",
+                projectId: "asc-project-58b62",
+                storageBucket: "asc-project-58b62.firebasestorage.app",
+                messagingSenderId: "522900482194",
+                appId: "1:522900482194:web:19abfba12f9d24719ade4b",
+            };
+
+            // Initialize Firebase and Auth
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+
+            function register() {
+                // Get user input values
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                // Register user with Firebase Auth
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        console.log("User registered:", user);
+                    })
+                    .catch((error) => {
+                        console.error("Error registering user:", error);
+                    });
+            }
+
+            // Attach event listener to the register button
+            document
+                .getElementById("registerButton")
+                .addEventListener("click", register);
+        </script>
+    </body>
 </html>
