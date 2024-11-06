@@ -85,17 +85,17 @@
                 <h3>Payment</h3>
                 <form>
                     <div class="mb-3">
-                        <input type="text" id="cardHolderName" class="form-control" placeholder="Card holder name">
+                        <input type="text" id="cardHolderName" class="form-control" placeholder="Card holder name" required />
                     </div>
                     <div class="mb-3">
-                        <input type="text" id="cardNumber" class="form-control" placeholder="Card number">
+                        <input type="text" id="cardNumber" class="form-control" placeholder="Card number" required />
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="text" id="expiryDate" class="form-control" placeholder="DD/MM/YY">
+                            <input type="text" id="expiryDate" class="form-control" placeholder="DD/MM/YY" required />
                         </div>
                         <div class="col">
-                            <input type="text" id="ccv" class="form-control" placeholder="CCV">
+                            <input type="text" id="ccv" class="form-control" placeholder="CCV" required />
                         </div>
                     </div>
                     <button type="button" id="payButton" class="btn btn-pay mt-3 ">PAY</button>
