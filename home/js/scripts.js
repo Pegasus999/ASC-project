@@ -21,5 +21,7 @@ function buyBook(id) {
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     buyBook(i + 1);
+    return alert("Added to cart ");
+
   });
 }

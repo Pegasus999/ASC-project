@@ -29,7 +29,7 @@ const books = [
   },
   {
     id: 5,
-    name: "one thousand and one nights",
+    name: "One thousand and one night",
     price: 25,
   },
   {
